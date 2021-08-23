@@ -1,6 +1,8 @@
 package net.msj0319.api.item.domain;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import net.msj0319.api.order.domain.Order;
 
 import javax.persistence.*;
@@ -8,10 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@NoArgsConstructor
 @Data
 @Table(name =  "Items")
 public class Item {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Item_id")
     private long itemNo;
 
@@ -35,4 +39,14 @@ public class Item {
 
     @OneToMany(mappedBy = "item")
     private List<Order> orders = new ArrayList<>();
+
+    @Builder //All, NoArgs도 아닌 내가 필요한 것만
+    public Item(String itemBrand, String itemName,String itemColor){
+        this.itemBrand = itemBrand;
+        this.itemName = itemName;
+        this.itemColor = itemColor;
+    }
+    @Override public String toString(){
+        return String.format("아이템 스펙: %s, %s, %s ", itemBrand, itemName,itemColor);
+    }
 }

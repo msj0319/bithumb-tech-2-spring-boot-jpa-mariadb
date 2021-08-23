@@ -28,7 +28,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public boolean existById(long id) {
+    public boolean existsById(long id) {
         return itemRepository.existsById(id);
     }
 
@@ -40,5 +40,9 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public void deleteById(long id) {
         itemRepository.deleteById(id);
+    }
+    @Override
+    public void deleteAll() {
+        itemRepository.deleteAll();
     }
 }
