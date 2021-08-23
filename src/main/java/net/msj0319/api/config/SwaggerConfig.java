@@ -17,11 +17,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-@Configuration
+//주석 풀기 : @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
     @Bean
-    public Docket api() {
+    public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
@@ -31,10 +31,9 @@ public class SwaggerConfig {
                 .useDefaultResponseMessages(false)
                 .securitySchemes(Collections.singletonList(apiKey()))
                 .securityContexts(Collections.singletonList(securityContext()))
-                .tags(new Tag("users", "Operations about users"))
+                .tags(new Tag("users","Operations about users"))
                 .genericModelSubstitutes(Optional.class);
     }
-
     private ApiInfo metadata() {
         return new ApiInfoBuilder()//
                 .title("JSON Web Token Authentication API")//
@@ -44,7 +43,6 @@ public class SwaggerConfig {
                 .contact(new Contact(null, null, "gaeddongie13@gmail.com"))//
                 .build();
     }
-
     private ApiKey apiKey() {
         return new ApiKey("Authorization", "Authorization", "header");
     }

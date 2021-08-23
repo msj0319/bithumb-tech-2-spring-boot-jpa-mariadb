@@ -12,8 +12,7 @@ import java.util.List;
 @Table(name =  "users")
 
 public class User {
-    @Id
-    @Column(name = "user_id")
+    @Id @Column(name = "user_id")
     private long userId;
 
     @Column(name = "username")

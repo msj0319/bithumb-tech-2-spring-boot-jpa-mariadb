@@ -12,7 +12,7 @@ public interface UserService {
     List<User> findAll();
     Optional<User> findById(long id);
     void save(User user);
-    boolean existById(long id);
+    boolean existsById(long id);
     long count();
     void deleteById(long id);
 }

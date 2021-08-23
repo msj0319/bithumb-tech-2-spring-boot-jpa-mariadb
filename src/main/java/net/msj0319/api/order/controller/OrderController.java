@@ -9,27 +9,23 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
-    @GetMapping
     public List<Order> findAll() {
         return null;
     }
 
-    @GetMapping("/{id}")
     public Optional<Order> findById(@PathVariable long id) {
         return Optional.empty();
     }
 
-    @PostMapping
     public void save(Order order) {
 
     }
-    @PutMapping
-    public void update(Order order) {
+    public void update(Order order){
 
     }
 
-    @GetMapping("/exist/{id}")
-    public boolean existById(long id) {
+    @GetMapping("/exists/{id}")
+    public boolean existsById(long id) {
         return false;
     }
 

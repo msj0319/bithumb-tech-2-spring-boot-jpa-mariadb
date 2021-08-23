@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public boolean existById(long id) {
+    public boolean existsById(long id) {
         return userRepository.existsById(id);
     }
 

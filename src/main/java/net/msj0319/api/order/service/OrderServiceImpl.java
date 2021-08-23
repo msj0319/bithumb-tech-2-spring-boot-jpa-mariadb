@@ -23,12 +23,12 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public void save(Order order) {
-        orderRepository.save(order);
+    public void save(Order item) {
+        orderRepository.save(item);
     }
 
     @Override
-    public boolean existById(long id) {
+    public boolean existsById(long id) {
         return orderRepository.existsById(id);
     }
 

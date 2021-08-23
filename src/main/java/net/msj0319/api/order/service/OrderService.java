@@ -11,8 +11,8 @@ import java.util.Optional;
 public interface OrderService {
     List<Order> findAll();
     Optional<Order> findById(long id);
-    void save(Order order);
-    boolean existById(long id);
+    void save(Order item);
+    boolean existsById(long id);
     long count();
     void deleteById(long id);
 }
