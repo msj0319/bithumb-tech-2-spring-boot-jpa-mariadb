@@ -16,27 +16,22 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> findAll() {
         return itemRepository.findAll();
     }
-
     @Override
     public Optional<Item> findById(long id) {
         return itemRepository.findById(id);
     }
-
     @Override
     public void save(Item item) {
         itemRepository.save(item);
     }
-
     @Override
     public boolean existsById(long id) {
         return itemRepository.existsById(id);
     }
-
     @Override
     public long count() {
         return itemRepository.count();
     }
-
     @Override
     public void deleteById(long id) {
         itemRepository.deleteById(id);

@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-//주석 풀기 : @Configuration
+@Configuration
 @EnableSwagger2
 public class SwaggerConfig {
     @Bean
