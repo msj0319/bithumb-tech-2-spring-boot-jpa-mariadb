@@ -17,5 +17,5 @@ public interface UserService {
     long count();
     void deleteById(long id);
     String signup(User user);
-    UserDto siginin(User user);
+    UserDto signin(User user);
 }

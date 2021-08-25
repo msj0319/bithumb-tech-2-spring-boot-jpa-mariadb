@@ -13,5 +13,5 @@ public interface UserRepository extends JpaRepository<User,Long> {
     boolean existsByUsername(String username);
     Optional<User> findByUsername(String username); //username이 존재할 수 있고 안할 수 있기 때문에 Optional
     @Query("select u from User u where u.username = :username and u.password = :password")
-    User siginin(@Param("username") String username, @Param("password") String password);
+    User signin(@Param("username") String username, @Param("password") String password);
 }

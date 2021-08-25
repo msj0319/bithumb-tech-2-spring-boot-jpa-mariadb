@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService{
     }
     //로그인
     @Override
-    public UserDto siginin(User user) {
+    public UserDto signin(User user) {
         try {
             UserDto userDto = modelMapper.map(user, UserDto.class);
             String token = (passwordEncoder.matches(
