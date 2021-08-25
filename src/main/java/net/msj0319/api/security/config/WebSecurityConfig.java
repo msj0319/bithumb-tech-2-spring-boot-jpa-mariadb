@@ -22,6 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     PasswordEncoder encoder() { //비밀번호 암호화
         return new BCryptPasswordEncoder();
     }
+
     @Bean
     public ModelMapper modelMapper() { return new ModelMapper(); }
 
