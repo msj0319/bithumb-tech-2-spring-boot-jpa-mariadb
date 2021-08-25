@@ -1,6 +1,7 @@
 package net.msj0319.api.user.service;
 
 import net.msj0319.api.user.domain.User;
+import net.msj0319.api.user.domain.UserDto;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface UserService {
     boolean existsById(long id);
     long count();
     void deleteById(long id);
+    String signup(User user);
+    UserDto siginin(User user);
 }

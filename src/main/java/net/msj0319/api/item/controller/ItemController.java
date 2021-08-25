@@ -17,7 +17,6 @@ import java.util.Optional;
 @Api
 @RequiredArgsConstructor
 @RestController
-//주석 풀기 : @CrossOrigin(origins = "*", allowCredentials = "*")
 @CrossOrigin(origins = "*", allowCredentials = "false")
 @RequestMapping("/items")
 public class ItemController {
@@ -52,15 +51,19 @@ public class ItemController {
     public ResponseEntity<Long> count() {
         return new ResponseEntity(itemService.count(), HttpStatus.OK);
     }
+
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable long id) {
         itemService.deleteById(id);
     }
 
+    //deleteAll 메서드에 대한 @DeleteMapping 과 페이지 오류, 서버 오류에 대한 ApiResponse 설정 예시
+    //아래 ApiResponse는 여러 메소드에도 작성할 수 있다.
     @DeleteMapping
     @ApiResponses(value = { @ApiResponse(code = 400, message = "Something went wrong"),
                             @ApiResponse(code = 403, message = "Access Denied"),
                             @ApiResponse(code = 422, message = "Item is alredy in use") })
+
     public void deleteAll(){
         itemService.deleteAll();
     }
