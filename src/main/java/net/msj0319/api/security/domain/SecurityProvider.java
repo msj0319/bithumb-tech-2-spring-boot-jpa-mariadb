@@ -46,6 +46,7 @@ public class SecurityProvider implements AuthenticationProvider {
         log.info("secretKEy" + secretKey);
     }
 
+    //사용자가 회원가입을 성공시키면 회원 고유의 토큰값을 생성한다.
     public String createToken(String username, List<Role> roles){
         log.info("createToken 들어옴------------------");
         Claims claims = Jwts.claims().setSubject(username);
