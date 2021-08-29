@@ -15,7 +15,8 @@ import java.util.List;
 @Table(name =  "Items")
 public class Item {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) //PK를 자동으로 생성해주는 어노테이션
+    //PK를 자동으로 생성해주는 어노테이션
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Item_id")
     private long itemNo;
 

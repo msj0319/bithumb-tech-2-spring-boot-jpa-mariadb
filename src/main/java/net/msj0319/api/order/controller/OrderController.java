@@ -17,12 +17,8 @@ public class OrderController {
         return Optional.empty();
     }
 
-    public void save(Order order) {
-
-    }
-    public void update(Order order){
-
-    }
+    public void save(Order order) {}
+    public void update(Order order){}
 
     @GetMapping("/exists/{id}")
     public boolean existsById(long id) {
@@ -35,7 +31,5 @@ public class OrderController {
     }
 
     @DeleteMapping
-    public void deleteById(long id) {
-
-    }
+    public void deleteById(long id) {}
 }
