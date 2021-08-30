@@ -30,7 +30,7 @@ public class BuilderTest {
             this.screenSize = builder.screenSize;
         }
     }
-
+    //빌더를 통해 원하는 객체를 만들기 위해 Mobile 클래스와 같은 멤버를 갖는 MobileBuilder Data 클래스를 생성
     @Data class MobileBuilder {
         private int ram; /* if final, Default Constructor Error */
         private int storage;
@@ -39,6 +39,8 @@ public class BuilderTest {
         private String processor;
         private double screenSize;
                                 //Setter
+        //MobileBuilder 객체를 반환하는 with 메서드, 단일 MobileBuilder 타입 객체를 입력받는다.
+        //
         public MobileBuilder with(Consumer<MobileBuilder> buildFields) {
             buildFields.accept(this);
             return this;
@@ -51,12 +53,15 @@ public class BuilderTest {
     @Test @DisplayName("빌더 패턴")
     //내가 선별한 몇개 필드만을 가지고 객체를 만들때 빌더를 사용한다.
     void main() {
+        //빌더 객체를 먼저 생성
         MobileBuilder builder = new MobileBuilder();
+        //빌더를 통해 새로운 Mobile 객체를 만든다. with 메서드를 통해 원하는 멤버에만 값을 Setting 하여 객체를 만든다.
         Mobile mymobile = builder.with( myBuilder -> {
             myBuilder.ram = 4;
             myBuilder.battery = 4000;
             myBuilder.processor = "A12";
         }).createMobile();
+
         assertThat(mymobile.getRam(), is(4));
         assertThat(mymobile.getBattery(), is(4000));
         assertThat(mymobile.getProcessor(), is(equalTo("A12")));
